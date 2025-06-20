@@ -9,20 +9,29 @@ public class carRentalSystem {
     private final List<car> carList = new ArrayList<>();
     private final Scanner sc = new Scanner(System.in);
 
-    public void addCar() {
-        System.out.print("Enter ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Enter Model: ");
-        String model = sc.nextLine();
-        System.out.print("Enter Fuel Type: ");
-        String fuel = sc.nextLine();
-        System.out.print("Enter Rent per Day: ");
-        double rent = sc.nextDouble();
+            public void addCar() {
+                int id;
+                while (true) {
+                    System.out.print("Enter ID: ");
+                    try {
+                        id = sc.nextInt();
+                        sc.nextLine();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter a valid integer for ID.");
+                        sc.nextLine(); // clear the invalid input
+                    }
+                }
+                System.out.print("Enter Model: ");
+                String model = sc.nextLine();
+                System.out.print("Enter Fuel Type: ");
+                String fuel = sc.nextLine();
+                System.out.print("Enter Rent per Day: ");
+                double rent = sc.nextDouble();
 
-        carList.add(new car(id, model, fuel, rent));
-        System.out.println("Car added successfully!");
-    }
+                carList.add(new car(id, model, fuel, rent));
+                System.out.println("Car added successfully!");
+            }
 
     public void viewCars() {
         if (carList.isEmpty()) {
@@ -35,8 +44,18 @@ public class carRentalSystem {
     }
 
     public void updateCar() {
-        System.out.print("Enter Car ID to update: ");
-        int id = sc.nextInt();
+        
+        int id;
+        while(true){
+            System.out.print("Enter Car ID to update: ");
+            try {
+                id = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer for ID.");
+                sc.nextLine(); // clear the invalid input
+            }
+        }
         for (car car : carList) {
             if (car.getId() == id) {
                 sc.nextLine();
@@ -54,8 +73,20 @@ public class carRentalSystem {
     }
 
     public void deleteCar() {
-        System.out.print("Enter Car ID to delete: ");
-        int id = sc.nextInt();
+        int id;
+        while(true){
+            try {
+                System.out.print("Enter Car ID to delete: ");
+                id = sc.nextInt();
+                sc.nextLine(); // clear the newline character
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer for ID.");
+                sc.nextLine(); // clear the invalid input
+            }
+        }
+        
+        
         Iterator<car> itr = carList.iterator();
         while (itr.hasNext()) {
             car car = itr.next();
@@ -69,8 +100,18 @@ public class carRentalSystem {
     }
 
     public void bookCar() {
-        System.out.print("Enter Car ID to book: ");
-        int id = sc.nextInt();
+        int id;
+        while (true) {
+            System.out.print("Enter Car ID to book: ");
+            try {
+                id = sc.nextInt();
+                sc.nextLine(); // clear the newline character
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer for ID.");
+                sc.nextLine(); // clear the invalid input
+            }
+        }
         for (car car : carList) {
             if (car.getId() == id) {
                 if (car.isRented()) {
@@ -86,8 +127,18 @@ public class carRentalSystem {
     }
 
     public void returnCar() {
-        System.out.print("Enter Car ID to return: ");
-        int id = sc.nextInt();
+        int id;
+        while (true) {
+            System.out.print("Enter Car ID to return: ");
+            try {
+                id = sc.nextInt();
+                sc.nextLine(); // clear the newline character
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer for ID.");
+                sc.nextLine(); // clear the invalid input
+            }
+        }
         for (car car : carList) {
             if (car.getId() == id) {
                 if (!car.isRented()) {
