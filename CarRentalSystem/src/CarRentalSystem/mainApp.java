@@ -15,7 +15,7 @@ public class mainApp {
             System.out.println("2. View Cars");
             System.out.println("3. Update Cars");
             System.out.println("4. Delete Car");
-            System.out.println("5. Book Car");
+            System.out.println("5. Book Car and Generate Invoice");
             System.out.println("6. Return Car");
             System.out.println("7. Exit");
             System.out.print("Enter choice: ");

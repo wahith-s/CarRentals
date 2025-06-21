@@ -1,0 +1,7 @@
+Invoice for Car ID: 2021
+Model: BMW M3
+Fuel Type: petrol
+Rent per Day: 1000.0
+Days Rented: 5
+Total Amount: 5000.0
+

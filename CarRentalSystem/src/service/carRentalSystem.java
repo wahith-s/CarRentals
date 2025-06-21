@@ -3,12 +3,13 @@
 package service;
 
 import model.car;
+
+import java.io.FileWriter;
 import java.util.*;
 
 public class carRentalSystem {
     private final List<car> carList = new ArrayList<>();
     private final Scanner sc = new Scanner(System.in);
-
             public void addCar() {
                 int id;
                 while (true) {
@@ -26,10 +27,12 @@ public class carRentalSystem {
                 String model = sc.nextLine();
                 System.out.print("Enter Fuel Type: ");
                 String fuel = sc.nextLine();
+                System.out.print("how many days you want to rent the car:");
+                int days= sc.nextInt();
                 System.out.print("Enter Rent per Day: ");
                 double rent = sc.nextDouble();
 
-                carList.add(new car(id, model, fuel, rent));
+                carList.add(new car(id, model, fuel, days, rent));
                 System.out.println("Car added successfully!");
             }
 
@@ -112,6 +115,8 @@ public class carRentalSystem {
                 sc.nextLine(); // clear the invalid input
             }
         }
+        
+
         for (car car : carList) {
             if (car.getId() == id) {
                 if (car.isRented()) {
@@ -119,11 +124,21 @@ public class carRentalSystem {
                 } else {
                     car.setRented(true);
                     System.out.println("Car booked successfully!");
+                    car.invoice(); // Call the invoice method to print the invoice
                 }
                 return;
             }
         }
         System.out.println("Car not found.");
+        // To call the invoice method from the car class, you need a car object.
+        // For example, if you want to print the invoice for a specific car after booking, 
+        // you should call car.invoice(); inside the booking logic, not here.
+        // If you want to call invoice when the car is found and booked, do it like this:
+
+        // Example (inside the booking loop, after car.setRented(true)):
+        // car.invoice();
+
+        // Here, since the car was not found, there is no car object to call invoice on. // Removed invalid static call to non-static method
     }
 
     public void returnCar() {
