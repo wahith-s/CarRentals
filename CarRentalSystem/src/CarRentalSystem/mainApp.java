@@ -9,6 +9,7 @@ public class mainApp {
         carRentalSystem system = new carRentalSystem();
         Scanner sc = new Scanner(System.in);
         int choice;
+        
 
         do {
             System.out.println("\n===== Car Rental System =====");
