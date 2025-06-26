@@ -3,8 +3,6 @@
 package service;
 
 import model.car;
-
-import java.io.FileWriter;
 import java.util.*;
 
 public class carRentalSystem {
