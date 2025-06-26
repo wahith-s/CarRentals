@@ -33,5 +33,7 @@ public class mainApp {
             }
 
         } while (choice != 7);
+        sc.close();
+        System.out.println("Thank you for using the Car Rental System!");
     }
 }
