@@ -130,15 +130,7 @@ public class carRentalSystem {
             }
         }
         System.out.println("Car not found.");
-        // To call the invoice method from the car class, you need a car object.
-        // For example, if you want to print the invoice for a specific car after booking, 
-        // you should call car.invoice(); inside the booking logic, not here.
-        // If you want to call invoice when the car is found and booked, do it like this:
-
-        // Example (inside the booking loop, after car.setRented(true)):
-        // car.invoice();
-
-        // Here, since the car was not found, there is no car object to call invoice on. // Removed invalid static call to non-static method
+        
     }
 
     public void returnCar() {

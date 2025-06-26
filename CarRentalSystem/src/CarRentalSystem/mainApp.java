@@ -11,12 +11,12 @@ public class mainApp {
 
         do {
             System.out.println("\n===== Car Rental System =====");
-            System.out.println("1. Add the Car from the inventory");
-            System.out.println("2. View Cars");
+            System.out.println("1. Add Car from the inventory");
+            System.out.println("2. View the Available Cars");
             System.out.println("3. Update Cars");
-            System.out.println("4. Delete Car");
-            System.out.println("5. Book Car and Generate Invoice");
-            System.out.println("6. Return Car");
+            System.out.println("4. Delete Cars");
+            System.out.println("5. Book Cars and Generate Invoice");
+            System.out.println("6. Return Cars");
             System.out.println("7. Exit");
             System.out.print("Enter choice: ");
             choice = sc.nextInt();
